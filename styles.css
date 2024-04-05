@@ -1,20 +1,29 @@
         /* CSS for card styling */
         .card {
-            border-radius: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             padding: 20px;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 300px; /* Set default height for the card */
+            height: 200px; /* Set default height for the card */
         }
         
         /* CSS for row and column layout */
         .row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center columns horizontally */
+            justify-content: space-around; /* Center columns horizontally with equal space around them */
         }
         
         .column {
             flex: 1;
             max-width: 300px; /* Maximum width of each column */
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .column {
+                flex: 100%; /* Make each column take full width on mobile */
+                max-width: 100%; /* Set maximum width to 100% */
+            }
         }
