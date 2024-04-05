@@ -1,11 +1,12 @@
-        /* CSS for card styling */
         .card {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 20px;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 300px; /* Set default height for the card */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         /* CSS for row and column layout */
@@ -14,23 +15,14 @@
             flex-wrap: wrap;
             justify-content: space-around; /* Center columns horizontally with equal space around them */
         }
-        
-        .column {
-            flex: 1;
-            max-width: 300px; /* Maximum width of each column */
-        }
 
-        /* Media query for mobile devices */
-        @media (max-width: 768px) {
-            .column {
-                flex: 100%; /* Make each column take full width on mobile */
-                max-width: 100%; /* Set maximum width to 100% */
-            }
-        }
-
-        /* CSS for images */
+        /* CSS for images inside cards */
         .card img {
-            max-width: 100%; /* Limit the maximum width of the image to 100% of the container */
-            max-height: 100%; /* Limit the maximum height of the image to 100% of the container */
-            object-fit: cover; /* Ensure the image covers the entire container without stretching */
+            max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+            max-height: 100%; /* Set the maximum height of the image to 100% of its container */
+            object-fit: cover; /* Ensure the image covers the entire container without distorting its aspect ratio */
+            margin-left: -20px; /* Remove any spacing at the left side of the card */
+            margin-right: -20px; /* Remove any spacing at the right side of the card */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
