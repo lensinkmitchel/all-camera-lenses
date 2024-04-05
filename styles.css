@@ -5,7 +5,7 @@
             padding: 20px;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 200px; /* Set default height for the card */
+            height: 300px; /* Set default height for the card */
         }
         
         /* CSS for row and column layout */
@@ -26,4 +26,11 @@
                 flex: 100%; /* Make each column take full width on mobile */
                 max-width: 100%; /* Set maximum width to 100% */
             }
+        }
+
+        /* CSS for images */
+        .card img {
+            max-width: 100%; /* Limit the maximum width of the image to 100% of the container */
+            max-height: 100%; /* Limit the maximum height of the image to 100% of the container */
+            object-fit: cover; /* Ensure the image covers the entire container without stretching */
         }
