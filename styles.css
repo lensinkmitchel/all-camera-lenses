@@ -1,4 +1,9 @@
 /* Navigation styling */
+nav {
+  box-sizing: border-box;
+    padding: 1rem;
+} 
+
 nav ul {
   list-style-type: none;
   padding: 0;
