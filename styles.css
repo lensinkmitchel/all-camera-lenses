@@ -1,8 +1,5 @@
-html, body {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 20px 20px 0px
+main {
+    padding: 2rem;
 }
 
 /* CSS for card styling */
