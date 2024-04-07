@@ -1,9 +1,30 @@
+/* Navigation styling */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main styling */
 main {
     box-sizing: border-box;
     padding: 1rem;
 }
 
-/* CSS for card styling */
+/* card styling */
 .card-container {
     width: 100%;
     display: flex;
@@ -58,8 +79,8 @@ main {
     }
   }
   
-  /* Desktop view: max 3 cards per row */
-  @media (min-width: 900px) {
+/* Desktop view: max 3 cards per row */
+@media (min-width: 900px) {
     .card {
       width: calc(33.333% - 60px); /* Adjust the width; account for gap */
     }
