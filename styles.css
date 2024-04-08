@@ -73,7 +73,7 @@ main {
 }
 
 /* Default to full width on mobile */
-.card, nav form {
+.card, header form {
     width: 100%;
 }
 
