@@ -25,10 +25,13 @@ nav a:hover {
 
 form {
   width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 input[type="search"], button[type="submit"] {
-  width: 100%;
+  width: calc(100% - 2rem); /* Adjust based on form padding */
+  margin-bottom: 0.5rem; /* Adjust if necessary */
   box-sizing: border-box;
 }
 
@@ -84,11 +87,14 @@ main {
 /* Mobile view: max 1 card per row */
 @media (max-width: 768px) {
   form {
-    /* Optional: Adjust padding or margin of the form for mobile */
-    padding: 0 1rem;
+    padding: 0 1rem; /* Maintains outer padding */
   }
 
   input[type="search"], button[type="submit"] {
+    width: calc(100% - 2rem); /* Adjust based on form padding */
+    margin-bottom: 0.5rem; /* Keeps space between input and button */
+  }
+}
     /* Ensures elements are full width on mobile */
     width: calc(100% - 1rem); /* Adjusting for potential padding */
     margin-bottom: 0.5rem; /* Adds space between the input and button */
