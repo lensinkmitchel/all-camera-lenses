@@ -30,7 +30,7 @@ form {
 }
 
 input[type="search"], button[type="submit"] {
-  width: calc(100% - 2rem); /* Adjust based on form padding */
+  width: calc(100% - 1rem); /* Adjust based on form padding */
   margin-bottom: 0.5rem; /* Adjust if necessary */
   box-sizing: border-box;
 }
@@ -91,7 +91,7 @@ main {
   }
 
   input[type="search"], button[type="submit"] {
-    width: calc(100% - 2rem); /* Adjust based on form padding */
+    width: calc(100% - 1rem); /* Adjust based on form padding */
     margin-bottom: 0.5rem; /* Keeps space between input and button */
   }
 }
