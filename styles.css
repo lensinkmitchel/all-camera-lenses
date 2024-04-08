@@ -43,7 +43,7 @@ main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
     justify-content: left;
 }
 
@@ -53,7 +53,7 @@ main {
     text-align: center;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     /* Add space below each card */
 }
 
@@ -65,7 +65,7 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 8px 8px 0px 0px;
-    padding: 0 0 16px;
+    padding: 0 0 1rem;
 }
 
 .card h3 {
@@ -76,22 +76,22 @@ main {
 
 .card p {
     text-align: left;
-    margin: 0 8px 16px 8px;
+    margin: 0 0.5rem 1rem 0.5rem;
     color: #333;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* Mobile view: max 1 card per row */
 @media (max-width: 768px) {
   form {
     /* Optional: Adjust padding or margin of the form for mobile */
-    padding: 0 10px;
+    padding: 0 1rem;
   }
 
   input[type="search"], button[type="submit"] {
     /* Ensures elements are full width on mobile */
-    width: calc(100% - 20px); /* Adjusting for potential padding */
-    margin-bottom: 10px; /* Adds space between the input and button */
+    width: calc(100% - 1rem); /* Adjusting for potential padding */
+    margin-bottom: 0.5rem; /* Adds space between the input and button */
   }
 
   button[type="submit"] {
