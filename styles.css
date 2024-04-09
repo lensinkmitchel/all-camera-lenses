@@ -82,7 +82,7 @@ main {
 
 .card {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 1rem;
   text-align: center;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -97,14 +97,14 @@ main {
   margin-right: auto;
   max-width: 100%;
   height: auto;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 1rem 1rem 0 0;
   padding: 0 0 1rem;
 }
 
 .card h3 {
   text-align: left;
-  margin: 0 8px 16px 8px;
-  font-size: 1.2em;
+  margin: 0 0.5rem 1rem .5rem;
+  font-size: 1.2rem;
 }
 
 .card p {
@@ -112,6 +112,27 @@ main {
   margin: 0 0.5rem 1rem 0.5rem;
   color: #333;
   font-size: 1rem;
+}
+
+/* Card button styling */
+.btn {
+  display: inline-block; /* Allows setting padding and width */
+  width: calc(100% - 1rem); /* Full width of the card minus horizontal padding */
+  margin: 0 0.5rem 0.5rem; /* Aligns with the horizontal padding of text */
+  padding: 0.5rem 0; /* Vertical padding, similar to the text */
+  background-color: transparent; /* No fill */
+  border: 1px solid #ccc; /* Outline that matches the card */
+  border-radius: 0.75rem; /* Matches the card's border-radius */
+  color: #000; /* Button text color */
+  text-align: center; /* Center the text inside the button */
+  text-decoration: none; /* Remove underline from the link */
+  font-size: 1rem; /* Match the text size */
+}
+
+.btn:hover {
+  background-color: #f2f2f2; /* Light fill on hover */
+  text-decoration: none; /* Maintain no underline */
+  color: #000; /* Adjust color as needed */
 }
 
 /* Mobile view: max 1 card per row */
