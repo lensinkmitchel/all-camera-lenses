@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Camera Lenses</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="fujifilm/index.html">Fujifilm</a></li>
-  </ul>
-</nav>
-        <!-- Header content such as logo, navigation, etc. -->
-    </header>
-    
-    <main>
-        <H1>All Camera Lenses</H1>
-        <p>This website contains an overview of all camera lenses ever in existence. Or, well, that's what it <i>aims</i> to be. Right now it's just going to be an quick overview of my own lenses. Then an overview of all Fujifilm lenses. We'll see what happens after that.</p>
-        <h2><a href="/all-camera-lenses/fujifilm">Fujifilm</a></h2>
-        <div class="card-container">
-            <div class="card">
-              <img src="https://via.placeholder.com/1200" alt="AirPods Pro">
-              <h3>AirPods Pro (2nd generation)</h3>
-              <p>$249.00</p>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/1200" alt="HomePod">
-              <h3>HomePod - Midnight</h3>
-              <p>$299.00</p>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/1200" alt="HomePod Mini">
-              <h3>HomePod mini - Yellow</h3>
-              <p>$99.00</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/1200" alt="HomePod Mini">
-                <h3>HomePod mini - Yellow</h3>
-                <p>$99.00</p>
-              </div>
-          </div>
-    </main>
-    
-    <footer>
-        <!-- Footer content such as copyright information, links, etc. -->
-    </footer>
 
-    <!-- Optional: Scripts at the end of the body for better page loading performance -->
-    <script src="script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Camera Lenses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="fujifilm/">Fujifilm</a>
+          <ul class="dropdown-content">
+            <li><a href="fujifilm/model-x/">Model X</a></li>
+            <li><a href="fujifilm/model-y/">Model Y</a></li>
+            <li><a href="fujifilm/model-z/">Model Z</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- Header content such as logo, navigation, etc. -->
+  </header>
+
+  <main>
+    <H1>All Camera Lenses</H1>
+    <p>This website contains an overview of all camera lenses ever in existence. Or, well, that's what it <i>aims</i> to
+      be. Right now it's just going to be an quick overview of my own lenses. Then an overview of all Fujifilm lenses.
+      We'll see what happens after that.</p>
+    <h2><a href="/all-camera-lenses/fujifilm">Fujifilm</a></h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/1200" alt="HomePod Mini">
+        <p>Fujinon</p>
+        <h3>XF16-55m f2.8 R LM WR</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/1200" alt="AirPods Pro">
+        <p>Fujifilm | Fujinon</p>
+        <h3>XF18mm f2.0 R</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/1200" alt="HomePod">
+        <p>Fujinon</p>
+        <h3>XF35mm f2.0 R WR</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/1200" alt="HomePod Mini">
+        <p>Fujinon</p>
+        <h3>XF50mm f2.0 R WR</h3>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Footer content such as copyright information, links, etc. -->
+  </footer>
+
+  <!-- Optional: Scripts at the end of the body for better page loading performance -->
+  <script src="script.js"></script>
 </body>
+
 </html>
