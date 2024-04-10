@@ -102,6 +102,22 @@ main {
   padding: 0 0 1rem;
 }
 
+.label-container {
+    display: flex; /* Aligns the paragraphs horizontally */
+    gap: 0.5rem; /* Adds some space between each paragraph/label */
+    /* Additional styling for positioning the container on the card, if needed */
+}
+
+.tag-container p {
+    background-color: #f2f2f2; /* Light grey background, adjust as needed */
+    color: #000; /* Text color */
+    padding: 0.25rem 0.5rem; /* Adds padding inside each label */
+    border-radius: 0.5rem; /* Rounded corners for the label look */
+    font-size: 0.75rem; /* Adjust font size as needed */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    margin: 0; /* Removes default margin from <p> elements */
+}
+
 .card h3 {
   text-align: left;
   margin: 0 0.5rem 1rem .5rem;
