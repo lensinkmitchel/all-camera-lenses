@@ -104,7 +104,7 @@ main {
 
 .tag-container {
     display: flex; /* Aligns the paragraphs horizontally */
-    gap: 0.5rem; /* Adds some space between each paragraph/label */
+    gap: 0.25rem; /* Adds some space between each paragraph/label */
     /* Additional styling for positioning the container on the card, if needed */
 }
 
