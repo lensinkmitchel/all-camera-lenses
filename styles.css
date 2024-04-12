@@ -112,7 +112,7 @@ main {
     background-color: #f2f2f2; /* Light grey background, adjust as needed */
     color: #000; /* Text color */
     padding: 0.25rem 0.5rem; /* Adds padding inside each label */
-    border-radius: 0.5rem; /* Rounded corners for the label look */
+    border-radius: 0.3rem; /* Rounded corners for the label look */
     font-size: 0.75rem; /* Adjust font size as needed */
     white-space: nowrap; /* Prevents the text from wrapping */
     margin: 0; /* Removes default margin from <p> elements */
