@@ -1,12 +1,19 @@
 /* COLORS AND GOODIES*/
 :root {
-  --primary-color: #466365; /* Soft blue for primary actions */
-  --secondary-color: #c5dff8; /* Light grey for backgrounds or secondary elements */
-  --accent-color: #E4C3AD; /* Soft red for accents or highlights */
-  --background-color: #fefdfd; /* White background */
-  --text-color: #2a2a2a; /* Dark greyish blue for primary text */
-  --button-color: #2a2a2a; /* Soft blue, similar to primary for button backgrounds */
-  --button-text-color: #fefdfd; /* White text on buttons */
+  --primary-color: #466365;
+  /* Soft blue for primary actions */
+  --secondary-color: #c5dff8;
+  /* Light grey for backgrounds or secondary elements */
+  --accent-color: #444444;
+  /* Soft red for accents or highlights */
+  --background-color: #fefdfd;
+  /* White background */
+  --text-color: #2a2a2a;
+  /* Dark greyish blue for primary text */
+  --button-color: #2a2a2a;
+  /* Soft blue, similar to primary for button backgrounds */
+  --button-text-color: #fefdfd;
+  /* White text on buttons */
 }
 
 /* General Body Styles */
@@ -102,12 +109,14 @@ main {
 }
 
 .card {
-  width: 100%; /* Mobile first: cards take full width */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Mobile first: cards take full width */
   border: 1px solid #ccc;
   border-radius: 1rem;
   text-align: center;
   background-color: var(--background-color);
-  border-color: var(--secondary-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   /* Add space below each card */
@@ -115,31 +124,50 @@ main {
 
 /* CSS for images inside cards */
 .card img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
+  width: 100%;
+  /* Ensures the image is always full width of the card */
   height: auto;
+  /* Maintains the aspect ratio */
   border-radius: 1rem 1rem 0 0;
-  padding: 0 0 1rem;
+  /* Rounded corners on top only */
 }
 
-.tag-container {
-    display: flex; /* Aligns the paragraphs horizontally */
-    flex-wrap: wrap; /* Allows items to wrap onto the next line */
-    gap: 0.25rem; /* Adds some space between each paragraph/label */
-    padding: 0rem; /* Adds padding around the tags */
+.card-tags {
+  display: flex;
+  /* Aligns the paragraphs horizontally */
+  flex-wrap: wrap;
+  /* Allows items to wrap onto the next line */
+  align-items: flex-start; /* Aligns items to the start of the container */
+  gap: 0;
+  /* Adds some space between each paragraph/label */
+  padding: 0.5rem 0; /* Padding for top and bottom inside the container */
 }
 
-.tag-container p {
-    background-color:  var(--secondary-color);
-    color: var(--text-color);
-    padding: 0.25rem 0.5rem; /* Adds padding inside each label */
-    border-radius: 0.3rem; /* Rounded corners for the label look */
-    font-size: 0.75rem; /* Adjust font size as needed */
-    white-space: nowrap; /* Prevents the text from wrapping */
-    margin: 0; /* Initially remove the margin */
-    margin-bottom: 0.1rem; /* Smaller bottom margin to reduce vertical space between rows */
+.card-tags p {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: .25rem .5rem;
+  /* Adds padding inside each label */
+  border-radius: 0.3rem;
+  /* Rounded corners for the label look */
+  font-size: .75rem;
+  /* Adjust font size as needed */
+  white-space: nowrap;
+  /* Prevents the text from wrapping */
+  margin: 0;
+  margin-right: 0.25rem; /* Right margin for spacing between tags on the same line */
+  /* Initially remove the margin */
+  margin-bottom: 0.1rem;
+  /* Smaller bottom margin to reduce vertical space between rows */
+  flex: 0 0 auto; /* Prevents the tags from growing or shrinking */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  /* Takes up all available space in the flex container */
 }
 
 .card h3 {
@@ -156,9 +184,8 @@ main {
 }
 
 /* Card button styling */
-.btn {
-  display: inline-block;
-  /* Allows setting padding and width */
+.card a.btn {
+  margin-top: auto; /* Pushes the button to the bottom if there is space */
   width: calc(100% - 1rem);
   /* Full width of the card minus horizontal padding */
   margin: 0 0.5rem 0.5rem;
@@ -181,23 +208,28 @@ main {
   /* Match the text size */
 }
 
-.btn:hover {
-  background-color: var(--accent-color); /* Change to accent color on hover */
+.card a.btn:hover {
+  background-color: var(--accent-color);
+  /* Change to accent color on hover */
   text-decoration: none;
   /* Maintain no underline */
-  color: #000;
+  color: var(--button-text-color);
   /* Adjust color as needed */
 }
 
 /* Tablet view: max 2 cards per row */
-@media (min-width: 48.063rem) and (max-width: 56.1875rem) { /* 769px to 899px if 1rem = 16px */
+@media (min-width: 48.063rem) and (max-width: 56.1875rem) {
+
+  /* 769px to 899px if 1rem = 16px */
   .card {
     width: calc(50% - 0.5rem);
   }
 }
 
 /* Desktop view: max 3 cards per row */
-@media (min-width: 56.25rem) { /* 900px if 1rem = 16px */
+@media (min-width: 56.25rem) {
+
+  /* 900px if 1rem = 16px */
   .card {
     width: calc(33.333% - (2rem / 3));
     max-width: 25rem;
