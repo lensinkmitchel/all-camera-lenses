@@ -1,12 +1,12 @@
 /* COLORS AND GOODIES*/
 :root {
-  --primary-color: #5A67D8; /* Soft blue for primary actions */
-  --secondary-color: #E2E8F0; /* Light grey for backgrounds or secondary elements */
-  --accent-color: #F56565; /* Soft red for accents or highlights */
-  --background-color: #FFFFFF; /* White background */
-  --text-color: #4A5568; /* Dark greyish blue for primary text */
-  --button-color: #5A67D8; /* Soft blue, similar to primary for button backgrounds */
-  --button-text-color: #FFFFFF; /* White text on buttons */
+  --primary-color: #466365; /* Soft blue for primary actions */
+  --secondary-color: #c5dff8; /* Light grey for backgrounds or secondary elements */
+  --accent-color: #E4C3AD; /* Soft red for accents or highlights */
+  --background-color: #fefdfd; /* White background */
+  --text-color: #2a2a2a; /* Dark greyish blue for primary text */
+  --button-color: #2a2a2a; /* Soft blue, similar to primary for button backgrounds */
+  --button-text-color: #fefdfd; /* White text on buttons */
 }
 
 /* General Body Styles */
@@ -82,7 +82,7 @@ nav a {
 }
 
 .dropdown-content a:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
 }
 
 
