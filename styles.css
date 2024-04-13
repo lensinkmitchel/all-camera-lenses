@@ -1,3 +1,22 @@
+/* COLORS AND GOODIES*/
+:root {
+  --primary-color: #5A67D8; /* Soft blue for primary actions */
+  --secondary-color: #E2E8F0; /* Light grey for backgrounds or secondary elements */
+  --accent-color: #F56565; /* Soft red for accents or highlights */
+  --background-color: #FFFFFF; /* White background */
+  --text-color: #4A5568; /* Dark greyish blue for primary text */
+  --button-color: #5A67D8; /* Soft blue, similar to primary for button backgrounds */
+  --button-text-color: #FFFFFF; /* White text on buttons */
+}
+
+/* General Body Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+
 /* NAVIGATION STYLING */
 nav {
   box-sizing: border-box;
@@ -15,11 +34,13 @@ nav li {
 }
 
 nav a {
+  color: var(--primary-color);
+  padding: 8px;
   text-decoration: none;
-  color: #000;
 }
 
 nav a:hover {
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
@@ -46,9 +67,9 @@ nav a {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -61,7 +82,7 @@ nav a {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: var(--accent-color);
 }
 
 
@@ -85,7 +106,8 @@ main {
   border: 1px solid #ccc;
   border-radius: 1rem;
   text-align: center;
-  background: #fff;
+  background-color: var(--background-color);
+  border-color: var(--secondary-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
   /* Add space below each card */
@@ -110,8 +132,8 @@ main {
 }
 
 .tag-container p {
-    background-color: #f2f2f2; /* Light grey background, adjust as needed */
-    color: #000; /* Text color */
+    background-color:  var(--secondary-color);
+    color: var(--text-color);
     padding: 0.25rem 0.5rem; /* Adds padding inside each label */
     border-radius: 0.3rem; /* Rounded corners for the label look */
     font-size: 0.75rem; /* Adjust font size as needed */
@@ -143,13 +165,13 @@ main {
   /* Aligns with the horizontal padding of text */
   padding: 1rem 0;
   /* Vertical padding, similar to the text */
-  background-color: transparent;
+  background-color: var(--button-color);
   /* No fill */
   border: 1px solid #ccc;
   /* Outline that matches the card */
   border-radius: 0.75rem;
   /* Matches the card's border-radius */
-  color: #000;
+  color: var(--button-text-color);
   /* Button text color */
   text-align: center;
   /* Center the text inside the button */
@@ -160,8 +182,7 @@ main {
 }
 
 .btn:hover {
-  background-color: #f2f2f2;
-  /* Light fill on hover */
+  background-color: var(--accent-color); /* Change to accent color on hover */
   text-decoration: none;
   /* Maintain no underline */
   color: #000;
