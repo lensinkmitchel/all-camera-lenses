@@ -1,4 +1,4 @@
-/* COLORS AND GOODIES*/
+/* COLORS AND GENERAL STYLES*/
 :root {
   --primary-color: #466365;
   /* Soft blue for primary actions */
@@ -23,8 +23,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 /* NAVIGATION STYLING */
+/* Hamburger Icon */
+.hamburger {
+  display: none; /* Hidden by default, will be displayed on mobile */
+  font-size: 24px; /* Icon size */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile menu style */
+nav ul {
+  display: flex; /* Flexbox layout for desktop */
+}
+
+/* Desktop menu style */
 nav {
   box-sizing: border-box;
   padding: 1rem;
@@ -75,21 +89,29 @@ nav a {
   display: none;
   position: absolute;
   background-color: var(--background-color);
-  min-width: 160px;
+  width: auto;
   box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .dropdown-content li {
   display: block;
+  text-align: left;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  color: var(--text-color); /* Use the text color variable */
+}
+
 .dropdown-content a:hover {
-  background-color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 
@@ -217,8 +239,32 @@ main {
   /* Adjust color as needed */
 }
 
+/* Hide the menu by default on mobile */
+@media screen and (max-width: 48rem) {
+  .hamburger {
+    display: block; /* Show the hamburger icon */
+  }
+  
+  nav ul {
+    display: none; /* Hide the navigation menu */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width */
+  }
+  
+  /* You might also want to add styles for when the menu is toggled open */
+  nav ul.show {
+    display: flex;
+  }
+  
+  /* Adjust the display of list items for mobile */
+  nav ul li {
+    display: block;
+    text-align: left;
+  }
+}
+
 /* Tablet view: max 2 cards per row */
-@media (min-width: 48.063rem) and (max-width: 56.1875rem) {
+@media (min-width: 48rem) and (max-width: 56rem) {
 
   /* 769px to 899px if 1rem = 16px */
   .card {
@@ -227,7 +273,7 @@ main {
 }
 
 /* Desktop view: max 3 cards per row */
-@media (min-width: 56.25rem) {
+@media (min-width: 56rem) {
 
   /* 900px if 1rem = 16px */
   .card {
