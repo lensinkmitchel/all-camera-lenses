@@ -23,6 +23,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* NAVIGATION STYLING */
 /* Hamburger Icon */
 .hamburger {
@@ -31,6 +36,9 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 1rem; /* This should match the nav padding for alignment */
+  margin-left: -1.5rem; /* If necessary, adjust this value to align the icon */
+  /* Other styles */
 }
 
 /* Mobile menu style */
