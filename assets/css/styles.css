@@ -36,6 +36,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--button-color);
   padding: 1rem; /* This should match the nav padding for alignment */
   margin-left: -1.5rem; /* If necessary, adjust this value to align the icon */
   /* Other styles */
