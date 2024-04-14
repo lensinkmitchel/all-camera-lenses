@@ -101,6 +101,7 @@ nav a {
   width: auto;
   box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  white-space: nowrap;
 }
 
 .dropdown-content li {
