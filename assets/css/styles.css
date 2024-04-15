@@ -31,23 +31,50 @@ body {
 /* NAVIGATION STYLING */
 /* Hamburger Icon */
 .hamburger {
-  display: none; /* Hidden by default, will be displayed on mobile */
-  font-size: 2rem; /* Icon size */
+  display: block;  /* Visible by default since it's mobile-first */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--button-color);
-  padding: 1rem; /* This should match the nav padding for alignment */
-  margin-left: -1.5rem; /* If necessary, adjust this value to align the icon */
-  /* Other styles */
+  padding: 1rem;
+  z-index: 1500;
 }
 
 /* Mobile menu style */
 nav ul {
-  display: flex; /* Flexbox layout for desktop */
+  display: none;
+  /* Initially hide the menu */
+  position: fixed;
+  /* Position it relative to the viewport */
+  top: 0;
+  left: 0;
+  /* Start from the left edge */
+  transform: translateX(-100%);
+  /* Hide off-screen to the left */
+  width: 80%;
+  /* Cover 80% of the screen width */
+  height: 100%;
+  /* Full screen height */
+  background-color: var(--background-color);
+  overflow-y: auto;
+  /* Enable scrolling if the content is longer than the screen */
+  z-index: 1500;
+  /* High z-index to ensure it's on top */
+  transition: transform 0.3s ease;
+  /* Smooth transition for sliding in */
+  padding-top: 60px;
+  /* Give some space at the top for the hamburger icon */
 }
 
-/* Desktop menu style */
+/* Show the menu when the 'show' class is added */
+nav ul.show {
+  transform: translateX(0);
+}
+
 nav {
   box-sizing: border-box;
   padding: 1rem;
@@ -56,22 +83,35 @@ nav {
 nav ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  display: none;  /* Start with the menu hidden on mobile */
+  flex-direction: column; /* Vertical stacking of menu items */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: var(--background-color);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1400; /* Ensure menu is above other content */
 }
 
 nav li {
-  display: inline;
   margin-right: 1rem;
+  position: relative;
 }
 
 nav a {
-  color: var(--primary-color);
+  display: block;
   padding: 8px;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 nav a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
+  background-color: var(--secondary-color);
 }
 
 /* Navigation base styles */
@@ -117,7 +157,8 @@ nav a {
   text-decoration: none;
   display: block;
   padding: 8px;
-  color: var(--text-color); /* Use the text color variable */
+  color: var(--text-color);
+  /* Use the text color variable */
 }
 
 .dropdown-content a:hover {
@@ -169,10 +210,12 @@ main {
   /* Aligns the paragraphs horizontally */
   flex-wrap: wrap;
   /* Allows items to wrap onto the next line */
-  align-items: flex-start; /* Aligns items to the start of the container */
+  align-items: flex-start;
+  /* Aligns items to the start of the container */
   gap: 0;
   /* Adds some space between each paragraph/label */
-  padding: 0.5rem 0; /* Padding for top and bottom inside the container */
+  padding: 0.5rem 0;
+  /* Padding for top and bottom inside the container */
 }
 
 .card-tags p {
@@ -187,11 +230,13 @@ main {
   white-space: nowrap;
   /* Prevents the text from wrapping */
   margin: 0;
-  margin-right: 0.25rem; /* Right margin for spacing between tags on the same line */
+  margin-right: 0.25rem;
+  /* Right margin for spacing between tags on the same line */
   /* Initially remove the margin */
   margin-bottom: 0.1rem;
   /* Smaller bottom margin to reduce vertical space between rows */
-  flex: 0 0 auto; /* Prevents the tags from growing or shrinking */
+  flex: 0 0 auto;
+  /* Prevents the tags from growing or shrinking */
 }
 
 .card-content {
@@ -217,7 +262,8 @@ main {
 
 /* Card button styling */
 .card a.btn {
-  margin-top: auto; /* Pushes the button to the bottom if there is space */
+  margin-top: auto;
+  /* Pushes the button to the bottom if there is space */
   width: calc(100% - 1rem);
   /* Full width of the card minus horizontal padding */
   margin: 0 0.5rem 0.5rem;
@@ -252,20 +298,31 @@ main {
 /* Hide the menu by default on mobile */
 @media screen and (max-width: 48rem) {
   .hamburger {
-    display: block; /* Show the hamburger icon */
+    display: block;
+    /* Show the hamburger icon */
   }
-  
+
   nav ul {
-    display: none; /* Hide the navigation menu */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Full width */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    flex-direction: column; /* Stack the menu items vertically */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1400;
+    display: block;
+    width: 80%;
+    background-color: var(--background-color);
+    overflow-y: auto; /* Allows scrolling */
+    padding-top: 60px; /* Provides space for the hamburger icon */
   }
-  
+
   /* You might also want to add styles for when the menu is toggled open */
   nav ul.show {
-    display: flex;
+    transform: translateX(0); /* Moves the menu into view */
   }
-  
+
   /* Adjust the display of list items for mobile */
   nav ul li {
     display: block;
@@ -289,5 +346,39 @@ main {
   .card {
     width: calc(33.333% - (2rem / 3));
     max-width: 25rem;
+  }
+
+  .hamburger {
+    display: none;  /* Hide the hamburger menu on larger screens */
+  }
+
+  nav ul {
+    display: flex;  /* Show the navigation inline */
+    flex-direction: row;  /* Horizontal layout of menu items */
+    position: static;  /* Remove fixed positioning */
+    transform: none;  /* No transformation needed */
+    width: auto;  /* Adjust width to content size */
+    height: auto;  /* Height adjusts to content */
+    overflow-y: visible;  /* No scrolling necessary */
+    z-index: 1;  /* Reset z-index */
+  }
+
+  .nav li {
+    position: relative; /* Ensures dropdown is positioned relative to its parent menu item */
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position directly below the menu item */
+    left: 0; /* Align with the left edge of the menu item */
+    background-color: var(--background-color);
+    width: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Higher than other content but not higher than the menu bar itself */
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;  /* Show dropdown on hover */
   }
 }
